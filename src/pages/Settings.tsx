@@ -100,20 +100,24 @@ export default function Settings() {
         </div>
 
         <div className="grid gap-4 md:grid-cols-2">
-          <Input
-            label="Full name"
-            value={profile.name}
-            onChange={(event) => updateProfile('name', event.target.value)}
-          />
-          <Input
-            label="Email address"
-            type="email"
-            value={profile.email}
-            onChange={(event) => updateProfile('email', event.target.value)}
-          />
-          <div className="md:col-span-2">
+          <div>
+            <label className="mb-2 block text-sm font-medium">Full name</label>
             <Input
-              label="Workspace name"
+              value={profile.name}
+              onChange={(event) => updateProfile('name', event.target.value)}
+            />
+          </div>
+          <div>
+            <label className="mb-2 block text-sm font-medium">Email address</label>
+            <Input
+              type="email"
+              value={profile.email}
+              onChange={(event) => updateProfile('email', event.target.value)}
+            />
+          </div>
+          <div className="md:col-span-2">
+            <label className="mb-2 block text-sm font-medium">Workspace name</label>
+            <Input
               value={profile.workspace}
               onChange={(event) => updateProfile('workspace', event.target.value)}
             />
@@ -136,13 +140,13 @@ export default function Settings() {
 
         <div className="flex flex-wrap gap-3">
           <Button
-            variant={theme === 'light' ? 'default' : 'outline'}
+            variant={theme === 'light' ? 'primary' : 'outline'}
             onClick={() => theme !== 'light' && toggleTheme()}
           >
             <Sun className="mr-2 h-4 w-4" /> Light
           </Button>
           <Button
-            variant={theme === 'dark' ? 'default' : 'outline'}
+            variant={theme === 'dark' ? 'primary' : 'outline'}
             onClick={() => theme !== 'dark' && toggleTheme()}
           >
             <Moon className="mr-2 h-4 w-4" /> Dark
